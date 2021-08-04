@@ -9,10 +9,38 @@ function formatDate (timestamp){
     let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
-
 }
 
+function displayForecast(){
+    let forecastElement = document.querySelector("#forecast");
+let forecastHTML = `<div class= "row">`;
+forecastHTML = forecastHTML +  
+        `<div class= "col-2">
+            <div class="weather-forecast-date">
+            thu
+            <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="" width="36px"/>
+            <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-max">18°</span> 
+            <span class="weather-forecast-min">12°</span> 
+        </div>
+    </div>`;
+forecastHTML = forecastHTML +  
+        `<div class= "col-2">
+            <div class="weather-forecast-date">
+            thu
+            <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="" width="36px"/>
+            <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-max">18°</span> 
+            <span class="weather-forecast-min">12°</span> 
+        </div>
+    </div>`;
+forecastHTML ='</div>';
 
+    forecastElement.innerHTML = forecastHTML
+
+   forecastElement.innerHTML =  `
+   
+} 
 
 function displayTemperature(response){
     console.log(response.data);
@@ -31,8 +59,8 @@ celsiusTemperature = response.data.main.temp;
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round (response.data.wind.speed);
-    dateElement.innerHTML = formatDate(response.data.dt * 1000)
-    iconElement.setAttribute ("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    iconElement.setAttribute ("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute ("alt", response.data.weather[0].description);
 
 }
@@ -75,3 +103,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Tilburg");
+displayForecast();
