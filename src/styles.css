@@ -1,10 +1,10 @@
 .weather-app {
-  background-image: url("weathergirls.jpg");
   background: linear-gradient(
-    178deg,
-    rgb(255, 255, 255) 67%,
-    rgb(250, 175, 128) 100%
+    180deg,
+    rgb(255, 255, 255) 32%,
+    rgb(252, 152, 72) 100%
   );
+
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -47,13 +47,16 @@ li:first-letter {
 .btn-primary {
   background-color: #fd7e14;
   border-color: black;
+  border-width: 1px;
+  transition: 0.2s;
+  box-shadow: 2px 2px 3px #a0a0a0;
 }
 .btn-primary.active:hover {
   cursor: pointer;
 }
 
 strong {
-  color: rgb(33, 33, 33);
+  color: black;
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
@@ -69,10 +72,6 @@ strong {
   cursor: default;
 }
 
-.weather-temperature .active:hover {
-  text-decoration: none;
-}
-
 .weather-temperature .units {
   position: relative;
   font-size: 16px;
@@ -85,6 +84,7 @@ strong {
 }
 
 .weather-forecast-date {
+  color: black;
   font-size: 16px;
   opacity: 0.5;
 }
@@ -97,6 +97,11 @@ strong {
 body {
   background-color: #fff;
   background-repeat: no-repeat;
-  background-position: right 100px;
-  background-size: 15%;
+}
+
+.open-code {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  padding-top: 20px;
+  text-align: center;
 }
